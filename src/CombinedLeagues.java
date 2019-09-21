@@ -13,14 +13,13 @@ public class CombinedLeagues {
 	}
 	
 	public void printMenu(int withNewConstructs) {
-		ArrayList<Team> breakfastItems = ((NFL) NFL).getTeams();
-		//pMenu.forEach(m -> printMenuItem(m));
-		for (Team m : breakfastItems) {
+		ArrayList<Team> nflteams = ((NFL) NFL).getTeams();
+		for (Team m : nflteams) {
 			printTeam(m);
 		}
 		
-		Team[] lunchItems = ((AFL) AFL).getTeams();
-		for (Team m : lunchItems) {
+		Team[] aflteams = ((AFL) AFL).getTeams();
+		for (Team m : aflteams) {
 			printTeam(m);
 		}
 	}
@@ -52,13 +51,6 @@ public class CombinedLeagues {
 		}
 	}
  
-	public void printDomeTeam() {
-		System.out.println("\nVEGETARIAN MENU\n----\nBREAKFAST");
-		printDomeTeam(NFL.createIterator());
-		System.out.println("\nLUNCH");
-		printDomeTeam(AFL.createIterator());
-	}
- 
 	public boolean hasDome(String name) {
 		Iterator<Team> nflIterator = NFL.createIterator();
 		if (hasDome(name, nflIterator)) {
@@ -71,17 +63,6 @@ public class CombinedLeagues {
 		return false;
 	}
 
-
-	private void printDomeTeam(Iterator<Team> iterator) {
-		while (iterator.hasNext()) {
-			Team team = iterator.next();
-			if (team.isDome()) {
-				System.out.print(team.getCity());
-				System.out.println("\t\t" + team.getRecord());
-				System.out.println("\t" + team.getMascot());
-			}
-		}
-	}
 
 	private boolean hasDome(String city, Iterator<Team> iterator) {
 		while (iterator.hasNext()) {

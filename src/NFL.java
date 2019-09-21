@@ -31,5 +31,4 @@ public class NFL implements League {
 		return teams.iterator();
 	}
   
-	// other menu methods here
 }

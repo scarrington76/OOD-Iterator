@@ -36,7 +36,6 @@ public class AFL implements League {
   
 	public Iterator<Team> createIterator() {
 		return new LeagueIterator(teams);
-		//return new AlternatingDinerMenuIterator(menuItems);
 	}
  
 }
